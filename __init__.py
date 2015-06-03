@@ -21,3 +21,5 @@ pdfpaths = 'global', 'local'
 pdfpaths = [os.path.join(rootdir, x) for x in pdfpaths]
 
 pdffiles = [[os.path.join(x, y) for y in os.listdir(x)] for x in pdfpaths]
+
+allpdfs = pdffiles[0] + pdffiles[1]
