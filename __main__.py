@@ -55,7 +55,8 @@ for key, values in found.items():
         if destroy:
             while len(values) > 1:
                 os.remove(values.pop())
-    if os.path.basename(values[0]) != key:
+    key = os.path.join(os.path.dirname(values[0]), key + '.pdf')
+    if values[0] != key:
         sys.stdout.write('\n\nBad name for %s%s:\n    %s' % (
             key, ' (renaming)' if destroy else '', values[0]))
         if destroy:
